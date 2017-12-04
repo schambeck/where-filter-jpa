@@ -57,8 +57,6 @@ public class WhereBuilder<T> implements Visitor {
     }
 
     private void analyzeNode(Node node) {
-//        String valueExpression = getValueExpression(node);
-//        System.out.println(node + ": " + valueExpression);
         BaseOperator operator = BaseOperator.fromString(node.getLabel());
         if (operator != null) {
             Predicate predicate = operator.getFunction().get(builder, from, node, where, tClass);
@@ -72,12 +70,6 @@ public class WhereBuilder<T> implements Visitor {
         result = new ReportingParseRunner(parser.Expression()).run(where);
         analyzeTree(result.parseTreeRoot);
     }
-
-//    void visit(WhereParser parser) {
-//        ParsingResult<T> result = new ReportingParseRunner(parser.Expression()).run(getWhere());
-//        String parseTreePrintOut = ParseTreeUtils.printNodeTree(result);
-//        System.out.println(parseTreePrintOut);
-//    }
 
     public List<Predicate> getPredicates() {
         return predicates;

@@ -15,7 +15,7 @@ public enum Operator {
     LESS(">", (builder, path, value) -> builder.lessThan((Path<Comparable>) path, (Comparable) value)),
     GREATER_OR_EQUAL(">", (builder, path, value) -> builder.greaterThanOrEqualTo((Path<Comparable>) path, (Comparable) value)),
     LESS_OR_EQUAL(">", (builder, path, value) -> builder.lessThanOrEqualTo((Path<Comparable>) path, (Comparable) value)),
-    IN("in", (builder, path, value) -> path.in((List<Object>) value)), // TODO: 04/12/17 se não fizer cast pra list dá erro em runtime (why?)
+    IN("in", (builder, path, value) -> path.in((List<Object>) value)),
     LIKE("like", (builder, path, value) -> builder.like((Expression<String>) path, (String) value)),
     ;
 

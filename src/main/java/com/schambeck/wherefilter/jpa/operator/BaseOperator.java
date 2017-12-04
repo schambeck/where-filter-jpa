@@ -16,7 +16,7 @@ public enum BaseOperator {
         Node attributePathNode = (Node) node.getChildren().get(0);
         Node operatorNode = (Node) node.getChildren().get(1);
         Node valueNode = (Node) node.getChildren().get(2);
-        String attributePath = getValueExpression(attributePathNode, where).trim(); // TODO: 28/11/17 recuperar o valor sem precisar trim()
+        String attributePath = getValueExpression(attributePathNode, where).trim();
         String operatorStr = getValueExpression(operatorNode, where).trim();
         String valueStr = getValueExpression(valueNode, where);
         Path<?> path = getPath(from, attributePath);
